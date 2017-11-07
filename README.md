@@ -1,8 +1,8 @@
-#Regenerate protobuf
+# Regenerate protobuf
 
 protoc --go_out=. *.proto
 
-#Run
+# Run
 go build . && ./google_news_parser
 
 
