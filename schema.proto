@@ -44,7 +44,7 @@ message NewsBody {
     optional string body = 5;
     optional string sourceUrl = 6;
     optional Cover cover = 9;
-    optional string previewImageUrl = 12;
+    optional string googleUrl = 12;
     optional string token = 14;
     optional int64 someNumber = 24;
 }
