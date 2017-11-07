@@ -1,0 +1,93 @@
+package main;
+
+message RequestParams {
+    optional string keyword = 2;
+    optional int64 someId = 5;
+}
+
+message ResponseRoot {
+    optional Payload payload = 1;
+}
+
+message RequestRoot {
+    optional Device device = 1;
+    optional RequestParams params = 2;
+    optional int64 count = 11;
+    optional RequestLocale locale = 13;
+}
+
+message Payload {
+    optional RequestParams request = 1;
+    repeated NewsData data = 2;
+    optional string googleUrl = 17;
+}
+
+message NewsData {
+    optional string token = 1;
+    optional NewsBody body = 2;
+
+    optional int64 timestamp = 6;
+    optional string keyword = 11;
+    optional string imageUrl = 12;
+    optional int64 someId = 14;
+    optional RequestParams request = 17;
+
+    optional int64 someId2 = 1002;
+
+}
+
+message NewsBody {
+    optional int64 id = 1;
+    optional string title = 2;
+    optional NewsSource source = 3;
+    optional int64 timestamp = 4;
+    optional string body = 5;
+    optional string sourceUrl = 6;
+    optional Cover cover = 9;
+    optional string previewImageUrl = 12;
+    optional string token = 14;
+    optional int64 someNumber = 24;
+}
+
+message NewsSource {
+    optional string title = 1;
+}
+
+message Cover {
+    optional CoverImage image = 3;
+    optional CoverVideo video = 4;
+}
+
+message CoverImage {
+    optional string url = 4;
+    optional int64 width = 5;
+    optional int64 height = 6;
+    optional int64 someNumber = 7;
+}
+
+message CoverVideo {
+    optional string url = 4;
+    optional int64 width = 5;
+    optional int64 height = 6;
+}
+
+message SimilarRequest {
+    optional string keyword1 = 1;
+    optional string keyword2 = 2;
+}
+
+message RequestLocale {
+    optional string lang = 4;
+    optional string country = 5;
+}
+
+message Device {
+    optional string lang = 8;
+    optional string country = 9;
+    optional int64 setOne = 17;
+    optional int64 setOne2 = 18;
+    optional int64 setOne3 = 20;
+    optional string token = 21;
+    optional string deviceId = 24;
+    optional string someStringId = 25;
+}
